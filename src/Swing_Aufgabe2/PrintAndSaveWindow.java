@@ -47,7 +47,7 @@ public class PrintAndSaveWindow extends JFrame {
     private void  choseTextFileForSaveData() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        fileChooser.setDialogTitle("Please choose a text file (example.txt) to load your data.");
+        fileChooser.setDialogTitle("Please chose a text file to load the students.");
         FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("TEXT FILES","txt", "text");
         fileChooser.setFileFilter(extensionFilter);
         fileChooser.showOpenDialog(null);

@@ -64,7 +64,6 @@ public class PrintAndSaveWindowController extends WindowAdapter implements Actio
 
     private void saveTextArea() {
         try {
-
             FileWriter fileWriter = new FileWriter(window.getSaveData(), false);
             fileWriter.write(window.getTextArea().getText());
             fileWriter.flush();

@@ -2,9 +2,8 @@ package Threads;
 import javax.swing.*;
 import java.awt.*;
 
-public class CountDownWindow {
+public class CountDownWindow  {
 
-    private JFrame frame;
 
 
     public CountDownWindow() {
@@ -16,18 +15,19 @@ public class CountDownWindow {
                 } catch ( UnsupportedLookAndFeelException |ClassNotFoundException  | InstantiationException |  IllegalAccessException e ) {
                     System.err.println(e.getMessage());
                 }
-
-                frame = new JFrame("CountDown");
+                JFrame frame = new JFrame("CountDown");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.add(new CountDown());
+
+                frame.add(new CountDown()); // Thread2 --> Countdown
+                //Thread1
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-
-
+                System.out.println("Fertig");
             }
         })
     ;}
+
 }
 
 

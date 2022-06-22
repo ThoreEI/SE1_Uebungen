@@ -10,7 +10,7 @@ public class CountDown extends JPanel{
 
     private Timer timer;
     private long startTime;
-    private long duration = 700313;
+    private final long DURATION = 7213;
     private JLabel label; // for prints
 
     public CountDown () {
@@ -18,15 +18,15 @@ public class CountDown extends JPanel{
         timer = new Timer(100, e -> {
             if (startTime < 0)
                 startTime = System.currentTimeMillis();
-
             long currentTime = System.currentTimeMillis();
             long secondsLeft = currentTime - startTime;
-            if (secondsLeft >= duration) {
-                secondsLeft = duration;
+            if (secondsLeft >= DURATION) {
+                secondsLeft = DURATION;
+                System.out.println("FertigCountdown");
                 timer.stop();
             }
             SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss:SS");
-            label.setText(dateFormat.format(duration - secondsLeft));
+            label.setText(dateFormat.format(DURATION - secondsLeft));
         });
 
         timer.setInitialDelay(0);
